@@ -1,0 +1,155 @@
+\documentclass{../homework}
+
+\title{COMS 3261 Homework 0}
+% \author{Tim Randolph}
+\date{Summer A 2022}
+
+\begin{document}
+
+\maketitle
+
+\textbf{This problem set is OPTIONAL. } The purpose is to test yourself and review discrete mathematics concepts that will be essential for the course. \\
+
+% This homework is due \textbf{[date]}. Submit to GradeScope (course code: 2KGDW8).
+
+\textbf{Grading policy reminder:} \LaTeX~is preferred, but neatly typed or handwritten solutions are acceptable.\footnote{The website \href{https://www.overleaf.com/}{Overleaf} (essentially Google Docs for LaTeX) may make compiling and organizing your .tex files easier. Here's a quick \href{https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes}{tutorial}.} I recommend using the .tex file for the homework as a template to write up your answers. Your TAs may dock points for indecipherable writing.\\
+
+Proofs should be complete; that is, include enough information that a reader can clearly tell that the argument is rigorous. \\
+
+If a question is ambiguous, please state your assumptions. This way, we can give you credit for correct work. (Even better, post on Ed so that we can resolve the ambiguity.) \\
+
+The tool \url{http://madebyevan.com/fsm/} may be useful for drawing finite state machines. \href{https://detexify.kirelabs.org/classify.html}{Detexify} is a nice tool that lets you draw a symbol and returns the \LaTeX~codes for similar symbols. The website \href{https://www.mathcha.io/}{mathcha.io} allows you to draw diagrams and convert them to \LaTeX~code. (You'll need to add the command ``\textbackslash usepackage\{tikz\}'' to the preamble of your .tex file to import the package tikz.)
+
+
+
+\clearpage
+\section{
+    Problem 1 (0 points).
+}
+    
+
+\begin{enumerate}
+    \item Examine the following formal descriptions of sets so that you understand which members they contain. Write a short informal English description of each set.
+        \begin{enumerate}
+            \item $\{1, 3, 5, 7...\}$.
+            
+            \item $\{n \; | \; n = 2m$ for some $m \in \mathbb{N}\}$. (Here $\mathbb{N}$ denotes the natural numbers $\{1, 2, \dots\}$.) 
+            
+            \item $\{w \; | \; w$ is a \emph{binary string} (a string of 0's and 1's) and $w$ equals the reverse of $w\}$.
+
+        \end{enumerate}
+    \item Write formal descriptions of the following sets.
+        \begin{enumerate}
+            \item The set containing the numbers 1, 10, and 100.
+            
+            \item The set containing all natural numbers less than 5.
+            
+            \item The set containing nothing at all. (There are two ways to write this: the ``natural'' way and using a certain special symbol.)
+            
+        \end{enumerate}
+    \item If the set $A$ has $|A|$ elements and the set $B$ has $|B|$ elements, how many elements are in $A \times B$? (Here $\times$ denotes the \emph{Cartesian product}: $A \times B$ represents the set of all ordered pairs $(a, b)$ consisting of one element $a \in A$ and one element $b \in B$.)
+
+    \item If $C$ is a set with $|C|$ elements, how many elements are in the power set $\mathcal{P}(C)$? (The power set $\mathcal{P}(C)$ is the set containing all subsets of $C$.)
+
+    \item Let $A = \{1, 2, 3, 4, 5\}$ and $B = \{1, 3, 5, 7, 9\}$. What is $A \cap B$? $A \cup B?$ $A \setminus B$ (also written $A - B$)?\footnote{You may have seen $A \setminus B$ defined only when $B$ is a subset of $A$ ($B \subseteq A$.) In this course, we'll use $A \setminus B$ in a slightly broader sense to mean ``all the elements of $A$, minus any elements in $A$ that are also in $B$.''} What is the complement $\overline{A}$ of the set $A$, considered with respect to the universe of integers $\mathbb{Z}$?
+
+    \item We use parentheses $()$ to distinguish $\emph{sequences}$, which care about the order of their elements, from sets. Of course, we can also make sets of sequences. What is $\{(a, b), \{a, b\}\} \cup \{(b, a), \{b, a\}\}$?
+    
+    \item Prove that
+    \[
+        A \cap ((B \cup \overline{A}) \cap \overline{B} ) = \emptyset.
+    \]
+
+\end{enumerate}
+
+\blfootnote{ Rationale: The goal of this question is to make sure you're comfortable with the idea of sets, set notation and set operations. }
+\blfootnote{ References: Sipser 0.2 pp. 3-6; \href{https://simple.wikipedia.org/wiki/Set}{Simple English Wiki: Set}.}
+
+
+\clearpage
+\section{Problem 2 (0 points).}
+
+\begin{enumerate}
+    \item Consider the undirected graph $G = (V, E)$, where $V$, the set of nodes, is $\{1, 2, 3, 4\}$ and $E$, the set of edges, is $\{\{1, 2\}, \{2, 3\}, \{1, 3\}, \{2, 4\}, \{1, 4\}\}$. Draw $G$. What are the degrees of each node? Indicate a path from node 3 to node 4 on the graph.
+    
+    \item How many components (connected pieces) does the graph 
+    \[
+        G = (\{1, 2, 3, 4, 5\}, \{ \{1,2\}, \{2,3\}, \{3,4\}, \{4,1\}, \{1,3\}, \{2,4\}\})
+    \]
+    contain? How many triangles does it contain?
+    
+    \item Prove that every \emph{tree} (connected graph without a cycle) that has $n \geq 1$ vertices has exactly $n-1$ edges.
+
+\end{enumerate}
+
+\blfootnote{ Rationale: The goal of this question is to make sure you're comfortable with graphs and proofs that refer to generic graphs. }
+\blfootnote{ References: Sipser 0.2 pp. 10-13; \href{https://en.wikipedia.org/wiki/Graph_(discrete_mathematics)}{Wiki: Graph}.}
+
+
+
+
+\clearpage
+\section{Problem 3 (0 points).}
+
+\begin{enumerate}
+    \item Given $f:\mathbb{N} \cup \{0\} \rightarrow \mathbb{N} \cup \{0\}$ where $f$ is defined as: \\
+    \[
+        f(x)=
+        \begin{cases}
+        x+1 & \text{if } x \text{ is even} \\
+        x-1 & \text{if } x \text{ is odd} \\
+        \end{cases}
+    \]
+    Prove or provide a counterexample that $f$ is 
+    \begin{enumerate}
+        \item one-to-one (injective),
+        \item onto (surjective),
+        \item and bijective (both one-to-one and onto).
+        
+    \end{enumerate}
+\end{enumerate}
+
+\blfootnote{ Rationale: The goal of this question is to make sure you're comfortable thinking about discrete functions. }
+\blfootnote{ References: Sipser 0.2 pp. 7-10, \href{https://en.wikipedia.org/wiki/Injective_function}{Wiki: One-to-one and Onto}, \href{https://en.wikipedia.org/wiki/Relation_(mathematics)}{Wiki: Relations}.}
+
+
+
+
+
+
+
+\clearpage
+\section{Problem 4 (0 points). }
+
+Prove using \emph{contradiction} that for all integers $n$, if 5 divides $n^2$ then 5 divides $n$ [Hint: what does it mean to not be divisible by 5?]. 
+
+\section{Problem 5 (0 points).}
+
+Prove that for any positive integer $n$, there exists a sequence of n consecutive positive composite integers. [Hint: try to construct such a sequence!]
+
+\blfootnote{ Rationale: The goal of this question is to make sure you're comfortable with proof by contradiction and construction. }
+\blfootnote{ References: Sipser 0.4, pp. 21-22. See also Sipser 0.3 on strategies for finding proofs, and this \href{https://medium.com/@nissim.lavy/types-of-proofs-c43ffacc8ada}{Medium post} that introduces proof by construction, contradiction and induction with examples. }
+
+
+\clearpage
+\section{Problem 6 (Proof by Induction).}
+\begin{enumerate}
+    \item Let $S(n) = 1 + 2 + \cdots + n$ be the sum of the first $n$ natural numbers and let $C(n) = 1^3 + 2^3 + \cdots + n^3$ be the sum of the first $n$ cubes. Prove the following equalities by induction on $n$ to arrive at the curious conclusion that $C(n) = S(n)^2$ for every $n$.
+    \begin{enumerate}
+        \item $S(n) = \frac{1}{2} n (n+1)$.
+
+        \item $C(n) = \frac{1}{4}(n^4 + 2n^3 + n^2) = \frac{1}{4}n^2(n+1)^2$.
+
+    \end{enumerate} 
+    \item Assume $n$ is a positive integer. Use induction to prove the following for all natural numbers $n$: 
+    \[
+        \frac{1}{1\cdot2} +  \frac{1}{2\cdot3} + \cdots +  \frac{1}{n\cdot(n+1)} = 1 - \frac{1}{n+1}.
+    \]
+
+\end{enumerate}
+
+\blfootnote{ Rationale: The goal of this question is to make sure you're comfortable with proof by induction. }
+\blfootnote{ References: Sipser 0.4, pp. 22-25. See also Sipser 0.3 on strategies for finding proofs, and this \href{https://medium.com/@nissim.lavy/types-of-proofs-c43ffacc8ada}{Medium post} that introduces proof by construction, contradiction and induction with examples. }
+
+\end{document}
+
