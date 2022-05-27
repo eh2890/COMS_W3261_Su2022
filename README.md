@@ -1,1 +1,3 @@
-# COMS_W3261_Su2022
+# Computer Science Theory Summer 2022 (Prof. Timothy Randolph)
+
+Course website: [https://twrand.github.io/3261-sum22.html](https://twrand.github.io/3261-sum22.html)
