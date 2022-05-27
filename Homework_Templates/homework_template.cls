@@ -19,6 +19,7 @@
 \usepackage{bm}
 \usepackage[backref, colorlinks,citecolor=blue,linkcolor=magenta,bookmarks=true]{hyperref}
 \usepackage[nameinlink]{cleveref}
+\usepackage{tcolorbox}
 
 % tikz
 \usepackage{subfig}
@@ -26,13 +27,8 @@
 \usepackage{tikz}
 
 \usepackage{tablefootnote}
-
-\fancypagestyle{plain}{%
-\fancyhf{} % clear all header and footer fields
-\fancyfoot[C]{\textbf{\thepage}} % except the center
-\renewcommand{\headrulewidth}{0pt}
-\renewcommand{\footrulewidth}{0pt}}
-
+\pagestyle{fancy}
+\setlength{\headheight}{14pt}
 \theoremstyle{plain}
 \newtheorem{theorem}{Theorem}
 \newtheorem{assumption}{Assumption}
